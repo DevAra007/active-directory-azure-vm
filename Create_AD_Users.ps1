@@ -14,7 +14,7 @@ if (-not (Get-ADOrganizationalUnit -Filter "Name -eq 'IT'")) {
 foreach ($user in $users) {
     if ($user.FirstName -and $user.LastName) {
         $username = ($user.FirstName.Substring(0,1) + $user.LastName).ToLower()
-        $password = ConvertTo-SecureString "pass1925" -AsPlainText -Force
+        $password = ConvertTo-SecureString "Password1925" -AsPlainText -Force
 
         New-ADUser -SamAccountName $username `
                    -UserPrincipalName "$username@$domain" `
